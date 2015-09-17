@@ -4,17 +4,17 @@
 Func DoAction($act)
 	Local $times = Int(StringMid($act, StringInStr($act, "_",0,-1) + 1))
 	$act = StringMid($act, 1, StringInStr($act, "_",0,-1)-1)
-	ConsoleWrite($act &",´ÎÊı:"&$times&@CRLF)
+	ConsoleWrite($act &",æ¬¡æ•°:"&$times&@CRLF)
 	If StringLeft($act, 3)="kb_" Then
-		;teensy¼üÅÌÒªÖ´ĞĞ
+		;teensyé”®ç›˜è¦æ‰§è¡Œ
 		$act = StringMid($act, 4)
 		PS3KeySequence($act, $times)
 	ElseIf StringLeft($act, 3)="cr_" Then
-		;cronusmaxÒªÖ´ĞĞ
+		;cronusmaxè¦æ‰§è¡Œ
 		$act = StringMid($act, 4)
 		CronusPressButton($act,$times)
 	ElseIf StringLeft($act, 3)="pc_" Then
-		;pcÒªÖ´ĞĞµÄ
+		;pcè¦æ‰§è¡Œçš„
 		$act = StringMid($act, 4)
 		If StringInStr($act,"wait_")=1 Then
 			Sleep(Int(StringMid($act, 6)))
@@ -22,7 +22,7 @@ Func DoAction($act)
 	EndIf
 EndFunc
 
-;Ë³ĞòÖ´ĞĞ°´¼ü
+;é¡ºåºæ‰§è¡ŒæŒ‰é”®
 Func PS3KeySequence($keystrokes, $times = 1)
 	Local $keyarray = StringSplit($keystrokes,",")
 	For $i=1 To $keyarray[0]
@@ -34,7 +34,7 @@ Func PS3KeySequence($keystrokes, $times = 1)
 	Next
 EndFunc
 
-;Ïòteensy·¢³ö°´¼ü,Ö§³ÖµÄ°´¼üÓĞ:up,down,left,right,esc,enter,backspace,delall,del,ps,tab
+;å‘teensyå‘å‡ºæŒ‰é”®,æ”¯æŒçš„æŒ‰é”®æœ‰:up,down,left,right,esc,enter,backspace,delall,del,ps,tab
 Func PS3Press($btn, $times)
 	For $i=1 To $times
 		If StringInStr($btn,"code_")=1 Then
@@ -79,7 +79,7 @@ Func PS3Press($btn, $times)
 	Next
 EndFunc
 
-;ÊäÈë×ÖÄ¸
+;è¾“å…¥å­—æ¯
 Func PS3InputText($text, $times)
 	For $i=1 To $times
 		_CommSendString($text)

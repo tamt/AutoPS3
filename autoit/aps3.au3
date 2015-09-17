@@ -1,5 +1,5 @@
-;Ö÷Òª¸ºÔğ±£´æ¡¢¶ÁÈ¡aps3ÎÄ¼ş
-;aps3ÊÇÎÒÃÇ×Ô¶¨ÒåµÄÎÄ¼ş¸ñÊ½£¬´æ´¢PS3°´¼üĞòÁĞ
+;ä¸»è¦è´Ÿè´£ä¿å­˜ã€è¯»å–aps3æ–‡ä»¶
+;aps3æ˜¯æˆ‘ä»¬è‡ªå®šä¹‰çš„æ–‡ä»¶æ ¼å¼ï¼Œå­˜å‚¨PS3æŒ‰é”®åºåˆ—
 
 #include <Array.au3>
 #include <File.au3>
@@ -10,13 +10,13 @@
 
 Func aps3_saveToFile($act_list_str)
 	; Create a constant variable in Local scope of the message to display in FileSaveDialog.
-    Local Const $sMessage = "ÎÄ¼şÃû"
+    Local Const $sMessage = "æ–‡ä»¶å"
 
     ; Display a save dialog to select a file.
     Local $sFileSaveDialog = FileSaveDialog($sMessage, @ScriptDir&"\aps3\", "aps3 (*.aps3)", $FD_PATHMUSTEXIST)
     If @error Then
         ; Display the error message.
-        MsgBox($MB_SYSTEMMODAL, "", "±£´æÊ§°Ü")
+        MsgBox($MB_SYSTEMMODAL, "", "ä¿å­˜å¤±è´¥")
     Else
         ; Retrieve the filename from the filepath e.g. Example.au3.
         Local $sFileName = StringTrimLeft($sFileSaveDialog, StringInStr($sFileSaveDialog, "\", $STR_NOCASESENSE, -1))
@@ -34,8 +34,22 @@ Func aps3_saveToFile($act_list_str)
         EndIf
 
         ; Display the saved file.
-        ;MsgBox($MB_SYSTEMMODAL, "", "ÎÄ¼ş±£´æµ½:" & @CRLF & $sFileSaveDialog)
-		FileWrite($sFileSaveDialog, $act_list_str)
+        ;MsgBox($MB_SYSTEMMODAL, "", "æ–‡ä»¶ä¿å­˜åˆ°:" & @CRLF & $sFileSaveDialog)
+		FileWrite($sFileSaveDialog, "#version=0.1" & @CRLF & $act_list_str)
     EndIf
+EndFunc
 
+Func aps3_readFromFile($file)
+    ;ä»æ–‡ä»¶ä¸­è§£æ
+    Local $act_str = ""
+    Local $line_arr[] = []
+    _FileReadToArray($file, $line_arr)
+    For $i=1 To $line_arr[0]
+        If StringInStr($line_arr[$i], "#")=1 Then
+            ;æ³¨é‡Šæˆ–å…¶å®ƒå€¼
+        Else
+            $act_str = $line_arr[$i]
+        EndIf
+    Next
+    Return $act_str
 EndFunc

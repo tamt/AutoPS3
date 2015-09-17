@@ -815,7 +815,7 @@
 				<property name="ImeName" vt="WString">中文 - QQ五笔输入法</property>
 				<property name="ItemHeight" vt="Int8">13</property>
 				<property name="TabOrder" vt="Int8">49</property>
-				<property name="CtrlStyle" vt="Int32">1352859651</property>
+				<property name="CtrlStyle" vt="Int32">1352859649</property>
 				<property name="CtrlExStyle" vt="Int16">512</property>
 				<property name="Resizing" vt="Set"/>
 			</properties>
@@ -1101,7 +1101,7 @@
 				<property name="ImeName" vt="WString">中文 - QQ五笔输入法</property>
 				<property name="ItemHeight" vt="Int8">13</property>
 				<property name="TabOrder" vt="Int8">68</property>
-				<property name="CtrlStyle" vt="Int32">1352859651</property>
+				<property name="CtrlStyle" vt="Int32">1352859649</property>
 				<property name="CtrlExStyle" vt="Int16">512</property>
 				<property name="Resizing" vt="Set"/>
 			</properties>
