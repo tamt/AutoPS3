@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <object type="TAForm" name="Form1_1">
 	<properties>
-		<property name="Left" vt="Int16">218</property>
-		<property name="Top" vt="Int16">155</property>
-		<property name="Width" vt="Int16">986</property>
+		<property name="Left" vt="Int16">180</property>
+		<property name="Top" vt="Int16">166</property>
+		<property name="Width" vt="Int16">1216</property>
 		<property name="Height" vt="Int16">569</property>
 		<property name="Caption" vt="UTF8String">PS3јьЕМ</property>
 		<property name="Color" vt="Ident">clBtnFace</property>
@@ -133,7 +133,7 @@
 				<property name="Top" vt="Int8">16</property>
 				<property name="Width" vt="Int8">75</property>
 				<property name="Height" vt="Int8">25</property>
-				<property name="Caption" vt="String">OK</property>
+				<property name="Caption" vt="UTF8String">Б¬ЅУPS3</property>
 				<property name="TabOrder" vt="Int8">4</property>
 				<property name="Color" vt="Ident">clBtnFace</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -524,7 +524,7 @@
 		<object type="TALabel" name="Label6">
 			<properties>
 				<property name="Left" vt="Int8">16</property>
-				<property name="Top" vt="Int16">328</property>
+				<property name="Top" vt="Int16">336</property>
 				<property name="Width" vt="Int8">85</property>
 				<property name="Height" vt="Int8">17</property>
 				<property name="Caption" vt="UTF8String">НЁ№эCronusїШЦЖ</property>
@@ -539,7 +539,7 @@
 		<object type="TAButton" name="ctrl_cronusTriangle">
 			<properties>
 				<property name="Left" vt="Int16">405</property>
-				<property name="Top" vt="Int16">401</property>
+				<property name="Top" vt="Int16">409</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўш</property>
@@ -554,7 +554,7 @@
 		<object type="TAButton" name="ctrl_cronusSquare">
 			<properties>
 				<property name="Left" vt="Int16">365</property>
-				<property name="Top" vt="Int16">433</property>
+				<property name="Top" vt="Int16">441</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўц</property>
@@ -569,7 +569,7 @@
 		<object type="TAButton" name="ctrl_cronusCircle">
 			<properties>
 				<property name="Left" vt="Int16">445</property>
-				<property name="Top" vt="Int16">433</property>
+				<property name="Top" vt="Int16">441</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўр</property>
@@ -584,7 +584,7 @@
 		<object type="TAButton" name="ctrl_cronusCross">
 			<properties>
 				<property name="Left" vt="Int16">405</property>
-				<property name="Top" vt="Int16">465</property>
+				<property name="Top" vt="Int16">473</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="String">X</property>
@@ -599,7 +599,7 @@
 		<object type="TAButton" name="ctrl_cronusUp">
 			<properties>
 				<property name="Left" vt="Int16">146</property>
-				<property name="Top" vt="Int16">400</property>
+				<property name="Top" vt="Int16">408</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўь</property>
@@ -614,7 +614,7 @@
 		<object type="TAButton" name="ctrl_cronusLeft">
 			<properties>
 				<property name="Left" vt="Int8">106</property>
-				<property name="Top" vt="Int16">432</property>
+				<property name="Top" vt="Int16">440</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўы</property>
@@ -629,7 +629,7 @@
 		<object type="TAButton" name="ctrl_cronusRight">
 			<properties>
 				<property name="Left" vt="Int16">186</property>
-				<property name="Top" vt="Int16">432</property>
+				<property name="Top" vt="Int16">440</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўъ</property>
@@ -644,7 +644,7 @@
 		<object type="TAButton" name="ctrl_cronusDown">
 			<properties>
 				<property name="Left" vt="Int16">146</property>
-				<property name="Top" vt="Int16">464</property>
+				<property name="Top" vt="Int16">472</property>
 				<property name="Width" vt="Int8">35</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="WString">Ўэ</property>
@@ -659,7 +659,7 @@
 		<object type="TAButton" name="ctrl_cronusStart">
 			<properties>
 				<property name="Left" vt="Int16">303</property>
-				<property name="Top" vt="Int16">427</property>
+				<property name="Top" vt="Int16">435</property>
 				<property name="Width" vt="Int8">51</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="String">start</property>
@@ -674,7 +674,7 @@
 		<object type="TAButton" name="ctrl_cronusPS">
 			<properties>
 				<property name="Left" vt="Int16">268</property>
-				<property name="Top" vt="Int16">470</property>
+				<property name="Top" vt="Int16">478</property>
 				<property name="Width" vt="Int8">51</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="String">PS</property>
@@ -689,7 +689,7 @@
 		<object type="TAButton" name="ctrl_cronusSelect">
 			<properties>
 				<property name="Left" vt="Int16">233</property>
-				<property name="Top" vt="Int16">429</property>
+				<property name="Top" vt="Int16">437</property>
 				<property name="Width" vt="Int8">51</property>
 				<property name="Height" vt="Int8">33</property>
 				<property name="Caption" vt="String">select</property>
@@ -704,7 +704,7 @@
 		<object type="TAButton" name="ctrl_cronusL2">
 			<properties>
 				<property name="Left" vt="Int16">128</property>
-				<property name="Top" vt="Int16">336</property>
+				<property name="Top" vt="Int16">344</property>
 				<property name="Width" vt="Int8">75</property>
 				<property name="Height" vt="Int8">25</property>
 				<property name="Caption" vt="String">L2</property>
@@ -719,7 +719,7 @@
 		<object type="TAButton" name="ctrl_cronusL1">
 			<properties>
 				<property name="Left" vt="Int16">128</property>
-				<property name="Top" vt="Int16">368</property>
+				<property name="Top" vt="Int16">376</property>
 				<property name="Width" vt="Int8">75</property>
 				<property name="Height" vt="Int8">25</property>
 				<property name="Caption" vt="String">L1</property>
@@ -734,7 +734,7 @@
 		<object type="TAButton" name="ctrl_cronusR2">
 			<properties>
 				<property name="Left" vt="Int16">388</property>
-				<property name="Top" vt="Int16">334</property>
+				<property name="Top" vt="Int16">342</property>
 				<property name="Width" vt="Int8">75</property>
 				<property name="Height" vt="Int8">25</property>
 				<property name="Caption" vt="String">R2</property>
@@ -749,7 +749,7 @@
 		<object type="TAButton" name="ctrl_cronusR1">
 			<properties>
 				<property name="Left" vt="Int16">388</property>
-				<property name="Top" vt="Int16">366</property>
+				<property name="Top" vt="Int16">374</property>
 				<property name="Width" vt="Int8">75</property>
 				<property name="Height" vt="Int8">25</property>
 				<property name="Caption" vt="String">R1</property>
@@ -778,7 +778,7 @@
 		</object>
 		<object type="TAButton" name="ctrl_clearAct">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
+				<property name="Left" vt="Int16">784</property>
 				<property name="Top" vt="Int16">216</property>
 				<property name="Width" vt="Int8">107</property>
 				<property name="Height" vt="Int8">41</property>
@@ -793,7 +793,7 @@
 		</object>
 		<object type="TAButton" name="ctrl_exeAct">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
+				<property name="Left" vt="Int16">784</property>
 				<property name="Top" vt="Int16">272</property>
 				<property name="Width" vt="Int8">105</property>
 				<property name="Height" vt="Int8">41</property>
@@ -810,7 +810,7 @@
 			<properties>
 				<property name="Left" vt="Int16">616</property>
 				<property name="Top" vt="Int8">56</property>
-				<property name="Width" vt="Int16">225</property>
+				<property name="Width" vt="Int16">161</property>
 				<property name="Height" vt="Int16">344</property>
 				<property name="ImeName" vt="WString">ЦРОД - QQОе±ККдИл·Ё</property>
 				<property name="ItemHeight" vt="Int8">13</property>
@@ -823,11 +823,11 @@
 		</object>
 		<object type="TAButton" name="ctrl_selectAct">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
+				<property name="Left" vt="Int16">784</property>
 				<property name="Top" vt="Int8">56</property>
 				<property name="Width" vt="Int8">105</property>
 				<property name="Height" vt="Int8">41</property>
-				<property name="Caption" vt="WString">їЄКјСЎФс°ґјь</property>
+				<property name="Caption" vt="WString">їЄКјВјЦЖ</property>
 				<property name="TabOrder" vt="Int8">50</property>
 				<property name="Color" vt="Ident">clBtnFace</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -838,7 +838,7 @@
 		</object>
 		<object type="TAButton" name="ctrl_delAct">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
+				<property name="Left" vt="Int16">784</property>
 				<property name="Top" vt="Int16">163</property>
 				<property name="Width" vt="Int8">105</property>
 				<property name="Height" vt="Int8">41</property>
@@ -851,13 +851,13 @@
 			</properties>
 			<components/>
 		</object>
-		<object type="TAButton" name="ctrl_copyActList">
+		<object type="TAButton" name="ctrl_saveActList">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
+				<property name="Left" vt="Int16">784</property>
 				<property name="Top" vt="Int16">360</property>
 				<property name="Width" vt="Int8">107</property>
 				<property name="Height" vt="Int8">41</property>
-				<property name="Caption" vt="WString">ёґЦЖ</property>
+				<property name="Caption" vt="WString">±ЈґжОЄaps3ОДјю</property>
 				<property name="TabOrder" vt="Int8">52</property>
 				<property name="Color" vt="Ident">clBtnFace</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -896,13 +896,13 @@
 			</properties>
 			<components/>
 		</object>
-		<object type="TAButton" name="ctrl_wait1">
+		<object type="TAButton" name="ctrl_waith">
 			<properties>
-				<property name="Left" vt="Int16">375</property>
-				<property name="Top" vt="Int16">280</property>
-				<property name="Width" vt="Int8">59</property>
+				<property name="Left" vt="Int16">431</property>
+				<property name="Top" vt="Int16">264</property>
+				<property name="Width" vt="Int8">27</property>
 				<property name="Height" vt="Int8">25</property>
-				<property name="Caption" vt="WString">µИґэ1Гл</property>
+				<property name="Caption" vt="String">0.5</property>
 				<property name="TabOrder" vt="Int8">55</property>
 				<property name="Color" vt="Ident">clBtnFace</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -913,11 +913,11 @@
 		</object>
 		<object type="TAButton" name="ctrl_wait5">
 			<properties>
-				<property name="Left" vt="Int16">456</property>
-				<property name="Top" vt="Int16">280</property>
-				<property name="Width" vt="Int8">59</property>
+				<property name="Left" vt="Int16">496</property>
+				<property name="Top" vt="Int16">264</property>
+				<property name="Width" vt="Int8">27</property>
 				<property name="Height" vt="Int8">25</property>
-				<property name="Caption" vt="WString">µИґэ5Гл</property>
+				<property name="Caption" vt="String">5</property>
 				<property name="TabOrder" vt="Int8">56</property>
 				<property name="Color" vt="Ident">clBtnFace</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -928,11 +928,11 @@
 		</object>
 		<object type="TAButton" name="ctrl_wait20">
 			<properties>
-				<property name="Left" vt="Int16">536</property>
-				<property name="Top" vt="Int16">280</property>
-				<property name="Width" vt="Int8">59</property>
+				<property name="Left" vt="Int16">560</property>
+				<property name="Top" vt="Int16">264</property>
+				<property name="Width" vt="Int8">27</property>
 				<property name="Height" vt="Int8">25</property>
-				<property name="Caption" vt="WString">µИґэ20Гл</property>
+				<property name="Caption" vt="String">20</property>
 				<property name="TabOrder" vt="Int8">57</property>
 				<property name="Color" vt="Ident">clBtnFace</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -943,11 +943,11 @@
 		</object>
 		<object type="TALabel" name="Label9">
 			<properties>
-				<property name="Left" vt="Int16">312</property>
-				<property name="Top" vt="Int16">288</property>
-				<property name="Width" vt="Int8">52</property>
+				<property name="Left" vt="Int16">304</property>
+				<property name="Top" vt="Int16">272</property>
+				<property name="Width" vt="Int8">70</property>
 				<property name="Height" vt="Int8">17</property>
-				<property name="Caption" vt="WString">К±јдµИґэ</property>
+				<property name="Caption" vt="WString">К±јдµИґэ(Гл)</property>
 				<property name="TabOrder" vt="Int8">58</property>
 				<property name="HaveVariable" vt="False">False</property>
 				<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -958,7 +958,7 @@
 		</object>
 		<object type="TACheckbox" name="ctrl_autoContinue">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
+				<property name="Left" vt="Int16">784</property>
 				<property name="Top" vt="Int16">320</property>
 				<property name="Width" vt="Int8">97</property>
 				<property name="Height" vt="Int8">17</property>
@@ -972,8 +972,8 @@
 		</object>
 		<object type="TALabel" name="Label10">
 			<properties>
-				<property name="Left" vt="Int16">856</property>
-				<property name="Top" vt="Int8">104</property>
+				<property name="Left" vt="Int16">784</property>
+				<property name="Top" vt="Int16">128</property>
 				<property name="Width" vt="Int8">52</property>
 				<property name="Height" vt="Int8">17</property>
 				<property name="Caption" vt="WString">°ґјьґОКэ</property>
@@ -987,8 +987,8 @@
 		</object>
 		<object type="TAInput" name="ctrl_actTimes">
 			<properties>
-				<property name="Left" vt="Int16">912</property>
-				<property name="Top" vt="Int8">104</property>
+				<property name="Left" vt="Int16">840</property>
+				<property name="Top" vt="Int16">128</property>
 				<property name="Width" vt="Int8">49</property>
 				<property name="Height" vt="Int8">21</property>
 				<property name="ImeName" vt="WString">ЦРОД - QQОе±ККдИл·Ё</property>
@@ -997,6 +997,128 @@
 				<property name="CtrlStyle" vt="Int32">1342374016</property>
 				<property name="CtrlExStyle" vt="Int16">512</property>
 				<property name="Resizing" vt="Set">DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TACheckbox" name="ctrl_syncOp">
+			<properties>
+				<property name="Left" vt="Int16">784</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">97</property>
+				<property name="Height" vt="Int8">17</property>
+				<property name="Caption" vt="WString">Н¬К±ІЩЧчPS3</property>
+				<property name="Checked" vt="True">True</property>
+				<property name="State" vt="Ident">cbChecked</property>
+				<property name="TabOrder" vt="Int8">62</property>
+				<property name="CtrlStyle" vt="Int32">1342242819</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAButton" name="ctrl_waitc">
+			<properties>
+				<property name="Left" vt="Int16">400</property>
+				<property name="Top" vt="Int16">264</property>
+				<property name="Width" vt="Int8">27</property>
+				<property name="Height" vt="Int8">25</property>
+				<property name="Caption" vt="String">0.1</property>
+				<property name="TabOrder" vt="Int8">63</property>
+				<property name="Color" vt="Ident">clBtnFace</property>
+				<property name="CtrlStyle" vt="Int32">1342373888</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAButton" name="ctrl_wait1">
+			<properties>
+				<property name="Left" vt="Int16">464</property>
+				<property name="Top" vt="Int16">264</property>
+				<property name="Width" vt="Int8">27</property>
+				<property name="Height" vt="Int8">25</property>
+				<property name="Caption" vt="String">1</property>
+				<property name="TabOrder" vt="Int8">64</property>
+				<property name="Color" vt="Ident">clBtnFace</property>
+				<property name="CtrlStyle" vt="Int32">1342373888</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAButton" name="ctrl_wait10">
+			<properties>
+				<property name="Left" vt="Int16">528</property>
+				<property name="Top" vt="Int16">264</property>
+				<property name="Width" vt="Int8">27</property>
+				<property name="Height" vt="Int8">25</property>
+				<property name="Caption" vt="String">10</property>
+				<property name="TabOrder" vt="Int8">65</property>
+				<property name="Color" vt="Ident">clBtnFace</property>
+				<property name="CtrlStyle" vt="Int32">1342373888</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TACheckbox" name="ctrl_autoInsWait">
+			<properties>
+				<property name="Left" vt="Int16">320</property>
+				<property name="Top" vt="Int16">304</property>
+				<property name="Width" vt="Int16">193</property>
+				<property name="Height" vt="Int8">17</property>
+				<property name="Caption" vt="WString">ВјЦЖК±ЧФ¶ЇјУИлµИґэК±јд(єБГл)</property>
+				<property name="Checked" vt="True">True</property>
+				<property name="State" vt="Ident">cbChecked</property>
+				<property name="TabOrder" vt="Int8">66</property>
+				<property name="CtrlStyle" vt="Int32">1342242819</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAInput" name="ctrl_autoWaitDelay">
+			<properties>
+				<property name="Left" vt="Int16">520</property>
+				<property name="Top" vt="Int16">304</property>
+				<property name="Width" vt="Int8">49</property>
+				<property name="Height" vt="Int8">21</property>
+				<property name="ImeName" vt="WString">ЦРОД - QQОе±ККдИл·Ё</property>
+				<property name="TabOrder" vt="Int8">67</property>
+				<property name="Text" vt="String">500</property>
+				<property name="CtrlStyle" vt="Int32">1342374016</property>
+				<property name="CtrlExStyle" vt="Int16">512</property>
+				<property name="Resizing" vt="Set">DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAList" name="ctrl_fileList">
+			<properties>
+				<property name="Left" vt="Int16">904</property>
+				<property name="Top" vt="Int8">56</property>
+				<property name="Width" vt="Int16">145</property>
+				<property name="Height" vt="Int16">344</property>
+				<property name="ImeName" vt="WString">ЦРОД - QQОе±ККдИл·Ё</property>
+				<property name="ItemHeight" vt="Int8">13</property>
+				<property name="TabOrder" vt="Int8">68</property>
+				<property name="CtrlStyle" vt="Int32">1352859651</property>
+				<property name="CtrlExStyle" vt="Int16">512</property>
+				<property name="Resizing" vt="Set"/>
+			</properties>
+			<components/>
+		</object>
+		<object type="TALabel" name="Label11">
+			<properties>
+				<property name="Left" vt="Int16">904</property>
+				<property name="Top" vt="Int8">32</property>
+				<property name="Width" vt="Int8">51</property>
+				<property name="Height" vt="Int8">17</property>
+				<property name="Caption" vt="UTF8String">aps3ОДјю</property>
+				<property name="TabOrder" vt="Int8">69</property>
+				<property name="HaveVariable" vt="False">False</property>
+				<property name="CtrlStyle" vt="Int32">1342308608</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set"/>
 			</properties>
 			<components/>
 		</object>
