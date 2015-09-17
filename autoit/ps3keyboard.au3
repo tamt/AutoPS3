@@ -3,6 +3,7 @@
 
 #include <core.au3>
 #include <aps3.au3>
+#include <util.au3>
 
 #include <ButtonConstants.au3>
 #include <ComboConstants.au3>
@@ -12,7 +13,7 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 #Region ### START Koda GUI section ### Form=d:\work\autops3\autoit\keyboard.kxf
-$Form1_1 = GUICreate("PS3键盘", 1201, 532, 273, 147)
+$Form1_1 = GUICreate("PS3键盘", 1201, 532, 196, 174)
 $Label1 = GUICtrlCreateLabel("端口 COM", 16, 16, 55, 17)
 $ctrl_portNum = GUICtrlCreateCombo("3", 72, 16, 41, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
 GUICtrlSetData(-1, "1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20")
@@ -62,7 +63,7 @@ $ctrl_cronusL2 = GUICtrlCreateButton("L2", 128, 344, 75, 25)
 $ctrl_cronusL1 = GUICtrlCreateButton("L1", 128, 376, 75, 25)
 $ctrl_cronusR2 = GUICtrlCreateButton("R2", 388, 342, 75, 25)
 $ctrl_cronusR1 = GUICtrlCreateButton("R1", 388, 374, 75, 25)
-$Label7 = GUICtrlCreateLabel("执行按键顺序", 616, 32, 76, 17)
+$Label7 = GUICtrlCreateLabel("执行按键顺序", 616, 8, 76, 17)
 $ctrl_clearAct = GUICtrlCreateButton("清空", 784, 216, 107, 41)
 $ctrl_exeAct = GUICtrlCreateButton("执行", 784, 272, 105, 41)
 $ctrl_actList = GUICtrlCreateList("", 616, 56, 161, 344)
@@ -88,10 +89,12 @@ GUICtrlSetState(-1, $GUI_CHECKED)
 $ctrl_autoWaitDelay = GUICtrlCreateInput("500", 520, 304, 49, 21)
 $ctrl_fileList = GUICtrlCreateList("", 904, 56, 145, 344)
 $Label11 = GUICtrlCreateLabel("aps3文件", 904, 32, 51, 17)
+$ctrl_fileDel = GUICtrlCreateButton("删除", 1056, 64, 75, 25)
+$ctrl_fileOpen = GUICtrlCreateButton("打开", 1056, 104, 75, 25)
+$ctrl_fileInsertTo = GUICtrlCreateButton("插入", 1056, 144, 75, 25)
+$ctrl_fileRefresh = GUICtrlCreateButton("刷新", 1056, 376, 75, 25)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
-
-
 
 Global $setport = 3
 Global $sportSetError
@@ -125,10 +128,10 @@ Func on_comm()
 	$CmBoBaud = Int(GUICtrlRead($ctrl_boBaud))
 	$resOpen = _CommSetPort($setport, $sportSetError, $CmBoBaud, $CmboDataBits, $SetParity, $setStop, $setflow)
 	If $resOpen<>1 Then
-		MsgBox(0,"设置端口失败",$sportSetError)
-		GUICtrlSetData($ctrl_commStats, "端口"&$setport&"设置失败")
+		MsgBox(0,"脡猫脰脙露脣驴脷脢搂掳脺",$sportSetError)
+		GUICtrlSetData($ctrl_commStats, "露脣驴脷"&$setport&"脡猫脰脙脢搂掳脺")
 	Else
-		GUICtrlSetData($ctrl_commStats, "端口"&$setport&"设置成功")
+		GUICtrlSetData($ctrl_commStats, "露脣驴脷"&$setport&"脡猫脰脙鲁脡鹿娄")
 	EndIf
 EndFunc
 
@@ -357,15 +360,15 @@ EndFunc
 GUICtrlSetOnEvent($ctrl_selectAct, "on_selectAct")
 Func on_selectAct()
 	If $ACT_EXEING Then
-		MsgBox(1,"错误","正在执行")
+		MsgBox(1,"麓铆脦贸","脮媒脭脷脰麓脨脨")
 	Else
 		If $ACT_SELECT_MODE Then
 			$ACT_SELECT_MODE = False
-			GUICtrlSetData($ctrl_selectAct, "开始录制")
+			GUICtrlSetData($ctrl_selectAct, "驴陋脢录脗录脰脝")
 			GUICtrlSetState($ctrl_exeAct, $GUI_ENABLE)
 		Else
 			$ACT_SELECT_MODE = True
-			GUICtrlSetData($ctrl_selectAct, "结束录制")
+			GUICtrlSetData($ctrl_selectAct, "陆谩脢酶脗录脰脝")
 			GUICtrlSetState($ctrl_exeAct, $GUI_DISABLE)
 		EndIf
 	EndIf
@@ -374,7 +377,7 @@ EndFunc
 GUICtrlSetOnEvent($ctrl_delAct, "on_delAct")
 Func on_delAct()
 	If $ACT_EXEING Then
-		MsgBox(1,"错误","正在执行")
+		MsgBox(1,"麓铆脦贸","脮媒脭脷脰麓脨脨")
 	Else
 		Local $curr = _GUICtrlListBox_GetCurSel($ctrl_actList)
 		_GUICtrlListBox_DeleteString($ctrl_actList, _GUICtrlListBox_GetCurSel($ctrl_actList))
@@ -388,11 +391,9 @@ EndFunc
 GUICtrlSetOnEvent($ctrl_clearAct, "on_clearAct")
 Func on_clearAct()
 	If $ACT_EXEING Then
-		MsgBox(1,"错误","正在执行")
+		MsgBox(1,"麓铆脦贸","脮媒脭脷脰麓脨脨")
 	Else
-		While _GUICtrlListBox_GetCount($ctrl_actList)>0
-			_GUICtrlListBox_DeleteString($ctrl_actList,0)
-		WEnd
+		_GUICtrlListBox_Clear($ctrl_actList)
 		actListToStr()
 	EndIf
 EndFunc
@@ -400,7 +401,7 @@ EndFunc
 GUICtrlSetOnEvent($ctrl_exeAct, "on_exeAct")
 Func on_exeAct()
 	If $ACT_SELECT_MODE Then
-		MsgBox(1,"错误","正在选择按键")
+		MsgBox(1,"麓铆脦贸","脮媒脭脷脩隆脭帽掳麓录眉")
 	ElseIf $ACT_EXEING Then
 		SetExeing(False)
 	Else
@@ -410,22 +411,26 @@ EndFunc
 
 GUICtrlSetOnEvent($ctrl_saveActList, "on_saveActList")
 Func on_saveActList()
-
+	aps3_saveToFile(GUICtrlRead($ctrl_actStr))
+	;赂眉脨脗脧脗脦脛录镁脕脨卤铆
+	_GUIctrlListBox_Clear($ctrl_fileList)
+	_GUICtrlListBox_Dir($ctrl_fileList, @ScriptDir&"\aps3\*.aps3")
 EndFunc
 
-;每个act自动添加一个等待
+;脙驴赂枚act脳脭露炉脤铆录脫脪禄赂枚碌脠麓媒
 Func AutoInsWaitTime()
 	If $ACT_SELECT_MODE And (GUICtrlRead($ctrl_autoInsWait)=$GUI_CHECKED) Then
 		Action("pc_wait_"&GUICtrlRead($ctrl_autoWaitDelay))
 	EndIf
 EndFunc
 
+_GUICtrlListBox_Dir($ctrl_fileList, @ScriptDir&"\aps3\*.aps3")
 ReadConfig()
 While 1
 	Sleep(100) ; Sleep to reduce CPU usage
 WEnd
 
-;把action list数据同步到文本框中
+;掳脩action list脢媒戮脻脥卢虏陆碌陆脦脛卤戮驴貌脰脨
 Func actListToStr()
 	Local $str = ""
 	For $i=0 to _GUICtrlListBox_GetCount($ctrl_actList)-1
@@ -441,7 +446,7 @@ Func actListToStr()
 EndFunc
 
 Func SaveConfig()
-	;保存配置
+	;卤拢麓忙脜盲脰脙
 	Local $cfg_arr[1] = ["#version 1.0.0"]
 	_ArrayAdd($cfg_arr, "actList="&GUICtrlRead($ctrl_actStr),0,"!@#$%^&*")
 	_FileWriteFromArray(@ScriptDir&"\last.cfg", $cfg_arr)
@@ -474,7 +479,7 @@ Func ExeActionList()
 		Local $index = _GUICtrlListBox_GetCurSel($ctrl_actList)
 		DoAction(_GUICtrlListBox_GetText($ctrl_actList, $index))
 
-		;执行下一个按键
+		;脰麓脨脨脧脗脪禄赂枚掳麓录眉
 		If $index<(_GUICtrlListBox_GetCount($ctrl_actList)-1) Then
 			_GUICtrlListBox_SetCurSel($ctrl_actList,$index + 1)
 
@@ -487,7 +492,7 @@ Func ExeActionList()
 			SetExeing(False)
 			If GUICtrlRead($ctrl_autoContinue)=$GUI_CHECKED Then
 				;_GUICtrlListBox_SetCurSel($ctrl_actList,0)
-				MsgBox(1,"执行完成", "执行完成")
+				MsgBox(1,"脰麓脨脨脥锚鲁脡", "脰麓脨脨脥锚鲁脡")
 			EndIf
 		EndIf
 	ElseIf _GUICtrlListBox_GetCount($ctrl_actList)<=0 Then
@@ -498,7 +503,7 @@ EndFunc
 Func Action($action)
 	If $ACT_SELECT_MODE Then
 		If $action<>"" Then
-			;记录到序列中
+			;录脟脗录碌陆脨貌脕脨脰脨
 			if _GUICtrlListBox_GetCurSel($ctrl_actList)>=0 Then
 				_GUICtrlListBox_InsertString($ctrl_actList,$action & "_" & GUICtrlRead($ctrl_actTimes),_GUICtrlListBox_GetCurSel($ctrl_actList)+1)
 			Else
@@ -506,15 +511,15 @@ Func Action($action)
 			EndIf
 
 			actListToStr()
-			;如果“同时操作PS3”是勾选的，那么就执行动作
+			;脠莽鹿没隆掳脥卢脢卤虏脵脳梅PS3隆卤脢脟鹿麓脩隆碌脛拢卢脛脟脙麓戮脥脰麓脨脨露炉脳梅
 			If GUICtrlRead($ctrl_syncOp)=$GUI_CHECKED  Then
 				DoAction($action & "_" & GUICtrlRead($ctrl_actTimes))
 			EndIf
-			;自动把次数重置为1
+			;脳脭露炉掳脩麓脦脢媒脰脴脰脙脦陋1
 			GUICtrlSetData($ctrl_actTimes,"1")
 		EndIf
 	Else
-		;执行动作
+		;脰麓脨脨露炉脳梅
 		DoAction($action&"_1")
 	EndIf
 EndFunc
@@ -522,14 +527,14 @@ EndFunc
 Func SetExeing($bool)
 	If $bool Then
 		$ACT_EXEING = True
-		GUICtrlSetData($ctrl_exeAct,"停止")
+		GUICtrlSetData($ctrl_exeAct,"脥拢脰鹿")
 		GUICtrlSetState($ctrl_selectAct, $GUI_DISABLE)
 		GUICtrlSetState($ctrl_delAct, $GUI_DISABLE)
 		GUICtrlSetState($ctrl_clearAct, $GUI_DISABLE)
 		ExeActionList()
 	Else
 		$ACT_EXEING = False
-		GUICtrlSetData($ctrl_exeAct,"执行")
+		GUICtrlSetData($ctrl_exeAct,"脰麓脨脨")
 		GUICtrlSetState($ctrl_selectAct, $GUI_ENABLE)
 		GUICtrlSetState($ctrl_delAct, $GUI_ENABLE)
 		GUICtrlSetState($ctrl_clearAct, $GUI_ENABLE)

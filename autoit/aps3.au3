@@ -34,8 +34,8 @@ Func aps3_saveToFile($act_list_str)
         EndIf
 
         ; Display the saved file.
-        MsgBox($MB_SYSTEMMODAL, "", "文件保存到:" & @CRLF & $sFileSaveDialog)
-
+        ;MsgBox($MB_SYSTEMMODAL, "", "文件保存到:" & @CRLF & $sFileSaveDialog)
+		FileWrite($sFileSaveDialog, $act_list_str)
     EndIf
 
 EndFunc
