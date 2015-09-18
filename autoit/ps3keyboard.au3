@@ -2,7 +2,6 @@
 #include <File.au3>
 
 #include <core.au3>
-#include <aps3.au3>
 #include <util.au3>
 
 #include <ButtonConstants.au3>
@@ -376,11 +375,13 @@ Func SetActSelectMode($bool)
 		GUICtrlSetData($ctrl_selectAct, "结束录制")
 		GUICtrlSetState($ctrl_exeAct, $GUI_DISABLE)
 		GUICtrlSetState($ctrl_fileInsertTo, $GUI_ENABLE)
+		GUICtrlSetState($ctrl_fileOpen, $GUI_DISABLE)
 	Else
 		$ACT_SELECT_MODE = False
 		GUICtrlSetData($ctrl_selectAct, "开始录制")
 		GUICtrlSetState($ctrl_exeAct, $GUI_ENABLE)
 		GUICtrlSetState($ctrl_fileInsertTo, $GUI_DISABLE)
+		GUICtrlSetState($ctrl_fileOpen, $GUI_ENABLE)
 	EndIf
 EndFunc
 
@@ -603,7 +604,7 @@ Func InsAction($action, $index)
 
 	actListToStr()
 	;如果“同时操作PS3”是勾选的，那么就执行动作
-	If GUICtrlRead($ctrl_syncOp)=$GUI_CHECKED And (StringInStr($action, "pc_")<>1) Then
+	If GUICtrlRead($ctrl_syncOp)=$GUI_CHECKED And (StringInStr($action, "pc_wait_")<>1) Then
 		DoAction($action & "_" & GUICtrlRead($ctrl_actTimes))
 	EndIf
 	;自动把次数重置为1

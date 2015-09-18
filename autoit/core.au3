@@ -1,5 +1,6 @@
 #include <CommMG.au3>
 #include <cronus.au3>
+#include <aps3.au3>
 
 Func DoAction($act)
 	Local $times = Int(StringMid($act, StringInStr($act, "_",0,-1) + 1))
@@ -16,8 +17,18 @@ Func DoAction($act)
 	ElseIf StringLeft($act, 3)="pc_" Then
 		;pc要执行的
 		$act = StringMid($act, 4)
+		;等待指定时间
 		If StringInStr($act,"wait_")=1 Then
 			Sleep(Int(StringMid($act, 6)))
+		;载入aps3文件，并且执行
+		ElseIf StringInStr($act,"aps3_")=1 Then
+			Local $aps3 = StringMid($act, 6)
+			Local $aps3_actStr = aps3_readFromFile(@ScriptDir&"\aps3\"&$aps3)
+			Local $act_arr = StringSplit($aps3_actStr, "|")
+			Local $a = 1
+			For $a=1 To $act_arr[0]
+				DoAction($act_arr[$a])
+			Next
 		EndIf
 	EndIf
 EndFunc
