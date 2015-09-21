@@ -75,7 +75,10 @@ EndFunc
 Func CronusMouseClick($px,$py,$times)
 	AutoItSetOption("MouseCoordMode", 0)
 	MouseMove($px,$py, 1)
-	MouseDown("left")
-	Sleep(100)
-	MouseUp("left")
+	for $i=1 to $times
+		MouseDown("left")
+		Sleep(100)
+		MouseUp("left")
+		Sleep(100)
+	next
 EndFunc

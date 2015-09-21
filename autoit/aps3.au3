@@ -11,6 +11,7 @@
 Func aps3_saveToFile($act_list_str)
 	; Create a constant variable in Local scope of the message to display in FileSaveDialog.
     Local Const $sMessage = "文件名"
+    Local $sFileName = ""
 
     ; Display a save dialog to select a file.
     Local $sFileSaveDialog = FileSaveDialog($sMessage, @ScriptDir&"\aps3\", "aps3 (*.aps3)", $FD_PATHMUSTEXIST)
@@ -19,7 +20,7 @@ Func aps3_saveToFile($act_list_str)
         MsgBox($MB_SYSTEMMODAL, "", "保存失败")
     Else
         ; Retrieve the filename from the filepath e.g. Example.au3.
-        Local $sFileName = StringTrimLeft($sFileSaveDialog, StringInStr($sFileSaveDialog, "\", $STR_NOCASESENSE, -1))
+        $sFileName = StringTrimLeft($sFileSaveDialog, StringInStr($sFileSaveDialog, "\", $STR_NOCASESENSE, -1))
 
         ; Check if the extension .au3 is appended to the end of the filename.
         Local $iExtension = StringInStr($sFileName, ".", $STR_NOCASESENSE)
@@ -35,8 +36,12 @@ Func aps3_saveToFile($act_list_str)
 
         ; Display the saved file.
         ;MsgBox($MB_SYSTEMMODAL, "", "文件保存到:" & @CRLF & $sFileSaveDialog)
-		FileWrite($sFileSaveDialog, "#version=0.1" & @CRLF & $act_list_str)
+        Local $file = FileOpen($sFileSaveDialog, $FO_OVERWRITE)
+		FileWrite($file, "#version=0.1" & @CRLF & $act_list_str)
+        FileClose($file)
     EndIf
+
+    Return $sFileName
 EndFunc
 
 Func aps3_readFromFile($file)

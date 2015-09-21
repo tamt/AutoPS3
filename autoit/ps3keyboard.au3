@@ -12,7 +12,7 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 #Region ### START Koda GUI section ### Form=d:\work\autops3\autoit\keyboard.kxf
-$Form1_1 = GUICreate("PS3键盘", 1201, 532, 196, 174)
+$Form1_1 = GUICreate("PS3键盘", 1148, 561, 143, 154)
 $Label1 = GUICtrlCreateLabel("端口 COM", 16, 16, 55, 17)
 $ctrl_portNum = GUICtrlCreateCombo("3", 72, 16, 41, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
 GUICtrlSetData(-1, "1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20")
@@ -30,7 +30,7 @@ $ctrl_left = GUICtrlCreateButton("←", 288, 208, 35, 33)
 $ctrl_right = GUICtrlCreateButton("→", 368, 208, 35, 33)
 $ctrl_down = GUICtrlCreateButton("↓", 328, 208, 35, 33)
 $ctrl_okInput = GUICtrlCreateButton("确定", 168, 176, 75, 25)
-$ctrl_text = GUICtrlCreateEdit("", 16, 72, 217, 89)
+$ctrl_text = GUICtrlCreateEdit("", 16, 72, 217, 89, BitOR($ES_AUTOVSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
 $ctrl_commStats = GUICtrlCreateLabel(".........................................", 344, 16, 127, 17)
 $ctrl_ascii = GUICtrlCreateInput("13", 104, 216, 49, 21)
@@ -46,52 +46,60 @@ $ctrl_tri = GUICtrlCreateButton("▲", 480, 160, 35, 25)
 $ctrl_squa = GUICtrlCreateButton("■", 440, 192, 35, 25)
 $ctrl_circle = GUICtrlCreateButton("○", 520, 192, 35, 25)
 $ctrl_cross = GUICtrlCreateButton("X", 480, 224, 35, 25)
-$Label6 = GUICtrlCreateLabel("通过Cronus控制", 16, 336, 85, 17)
-$ctrl_cronusTriangle = GUICtrlCreateButton("▲", 405, 409, 35, 33)
-$ctrl_cronusSquare = GUICtrlCreateButton("■", 365, 441, 35, 33)
-$ctrl_cronusCircle = GUICtrlCreateButton("○", 445, 441, 35, 33)
-$ctrl_cronusCross = GUICtrlCreateButton("X", 405, 473, 35, 33)
-$ctrl_cronusUp = GUICtrlCreateButton("↑", 146, 408, 35, 33)
-$ctrl_cronusLeft = GUICtrlCreateButton("←", 106, 440, 35, 33)
-$ctrl_cronusRight = GUICtrlCreateButton("→", 186, 440, 35, 33)
-$ctrl_cronusDown = GUICtrlCreateButton("↓", 146, 472, 35, 33)
-$ctrl_cronusStart = GUICtrlCreateButton("start", 303, 435, 51, 33)
-$ctrl_cronusPS = GUICtrlCreateButton("PS", 268, 478, 51, 33)
-$ctrl_cronusSelect = GUICtrlCreateButton("select", 233, 437, 51, 33)
-$ctrl_cronusL2 = GUICtrlCreateButton("L2", 128, 344, 75, 25)
-$ctrl_cronusL1 = GUICtrlCreateButton("L1", 128, 376, 75, 25)
-$ctrl_cronusR2 = GUICtrlCreateButton("R2", 388, 342, 75, 25)
-$ctrl_cronusR1 = GUICtrlCreateButton("R1", 388, 374, 75, 25)
-$Label7 = GUICtrlCreateLabel("执行按键顺序", 616, 8, 76, 17)
-$ctrl_clearAct = GUICtrlCreateButton("清空", 784, 216, 107, 41)
-$ctrl_exeAct = GUICtrlCreateButton("执行", 784, 272, 105, 41)
-$ctrl_actList = GUICtrlCreateList("", 616, 56, 161, 344, BitOR($LBS_NOTIFY,$WS_VSCROLL,$WS_BORDER))
-$ctrl_selectAct = GUICtrlCreateButton("开始录制", 784, 56, 105, 41)
-$ctrl_delAct = GUICtrlCreateButton("删除", 784, 163, 105, 41)
-$ctrl_saveActList = GUICtrlCreateButton("保存为aps3文件", 784, 360, 107, 41)
-$Label8 = GUICtrlCreateLabel("要执行的按键顺序", 616, 416, 100, 17)
-$ctrl_actStr = GUICtrlCreateEdit("", 616, 440, 345, 57)
-$ctrl_waith = GUICtrlCreateButton("0.5", 431, 264, 27, 25)
-$ctrl_wait5 = GUICtrlCreateButton("5", 496, 264, 27, 25)
-$ctrl_wait20 = GUICtrlCreateButton("20", 560, 264, 27, 25)
-$Label9 = GUICtrlCreateLabel("时间等待(秒)", 304, 272, 70, 17)
-$ctrl_autoContinue = GUICtrlCreateCheckbox("自动连续", 784, 320, 97, 17)
-$Label10 = GUICtrlCreateLabel("按键次数", 784, 128, 52, 17)
-$ctrl_actTimes = GUICtrlCreateInput("1", 840, 128, 49, 21)
-$ctrl_syncOp = GUICtrlCreateCheckbox("同时操作PS3", 784, 104, 97, 17)
+$Label6 = GUICtrlCreateLabel("通过Cronus控制", 16, 360, 85, 17)
+$ctrl_cronusTriangle = GUICtrlCreateButton("▲", 405, 433, 35, 33)
+$ctrl_cronusSquare = GUICtrlCreateButton("■", 365, 465, 35, 33)
+$ctrl_cronusCircle = GUICtrlCreateButton("○", 445, 465, 35, 33)
+$ctrl_cronusCross = GUICtrlCreateButton("X", 405, 497, 35, 33)
+$ctrl_cronusUp = GUICtrlCreateButton("↑", 146, 432, 35, 33)
+$ctrl_cronusLeft = GUICtrlCreateButton("←", 106, 464, 35, 33)
+$ctrl_cronusRight = GUICtrlCreateButton("→", 186, 464, 35, 33)
+$ctrl_cronusDown = GUICtrlCreateButton("↓", 146, 496, 35, 33)
+$ctrl_cronusStart = GUICtrlCreateButton("start", 303, 459, 51, 33)
+$ctrl_cronusPS = GUICtrlCreateButton("PS", 268, 502, 51, 33)
+$ctrl_cronusSelect = GUICtrlCreateButton("select", 233, 461, 51, 33)
+$ctrl_cronusL2 = GUICtrlCreateButton("L2", 128, 368, 75, 25)
+$ctrl_cronusL1 = GUICtrlCreateButton("L1", 128, 400, 75, 25)
+$ctrl_cronusR2 = GUICtrlCreateButton("R2", 388, 366, 75, 25)
+$ctrl_cronusR1 = GUICtrlCreateButton("R1", 388, 398, 75, 25)
+$Label7 = GUICtrlCreateLabel("动作序列:", 616, 8, 55, 17)
+$ctrl_clearAct = GUICtrlCreateButton("清空", 784, 192, 107, 41)
+$ctrl_exeAct = GUICtrlCreateButton("执行", 784, 248, 105, 41)
+$ctrl_actList = GUICtrlCreateList("", 616, 32, 161, 461, BitOR($LBS_NOTIFY,$WS_VSCROLL,$WS_BORDER))
+$ctrl_selectAct = GUICtrlCreateButton("开始录制", 784, 32, 105, 41)
+$ctrl_delAct = GUICtrlCreateButton("删除", 784, 139, 105, 41)
+$ctrl_saveActList = GUICtrlCreateButton("保存为aps3文件", 784, 448, 107, 41)
+$ctrl_waith = GUICtrlCreateButton("0.5", 431, 304, 27, 25)
+$ctrl_wait5 = GUICtrlCreateButton("5", 496, 304, 27, 25)
+$ctrl_wait20 = GUICtrlCreateButton("20", 560, 304, 27, 25)
+$Label9 = GUICtrlCreateLabel("时间等待(秒)", 304, 312, 70, 17)
+$ctrl_autoContinue = GUICtrlCreateCheckbox("自动连续", 784, 296, 97, 17)
+$Label10 = GUICtrlCreateLabel("按键次数", 784, 104, 52, 17)
+$ctrl_actTimes = GUICtrlCreateInput("1", 840, 104, 49, 21)
+$ctrl_syncOp = GUICtrlCreateCheckbox("同时操作PS3", 784, 80, 97, 17)
 GUICtrlSetState(-1, $GUI_CHECKED)
-$ctrl_waitc = GUICtrlCreateButton("0.1", 400, 264, 27, 25)
-$ctrl_wait1 = GUICtrlCreateButton("1", 464, 264, 27, 25)
-$ctrl_wait10 = GUICtrlCreateButton("10", 528, 264, 27, 25)
-$ctrl_autoInsWait = GUICtrlCreateCheckbox("录制时自动加入等待时间(毫秒)", 320, 304, 193, 17)
+$ctrl_waitc = GUICtrlCreateButton("0.1", 400, 304, 27, 25)
+$ctrl_wait1 = GUICtrlCreateButton("1", 464, 304, 27, 25)
+$ctrl_wait10 = GUICtrlCreateButton("10", 528, 304, 27, 25)
+$ctrl_autoInsWait = GUICtrlCreateCheckbox("录制时自动加入等待时间(毫秒)", 8, 312, 209, 17)
 GUICtrlSetState(-1, $GUI_CHECKED)
-$ctrl_autoWaitDelay = GUICtrlCreateInput("500", 520, 304, 49, 21)
-$ctrl_fileList = GUICtrlCreateList("", 904, 56, 145, 344, BitOR($LBS_NOTIFY,$WS_VSCROLL,$WS_BORDER))
-$Label11 = GUICtrlCreateLabel("aps3文件", 904, 32, 51, 17)
-$ctrl_fileDel = GUICtrlCreateButton("删除", 1056, 64, 75, 25)
-$ctrl_fileOpen = GUICtrlCreateButton("打开", 1056, 104, 75, 25)
-$ctrl_fileInsertTo = GUICtrlCreateButton("插入", 1056, 144, 75, 25)
-$ctrl_fileRefresh = GUICtrlCreateButton("刷新", 1056, 376, 75, 25)
+$ctrl_autoWaitDelay = GUICtrlCreateInput("500", 224, 312, 49, 21)
+$ctrl_fileList = GUICtrlCreateList("", 904, 32, 145, 240, BitOR($LBS_NOTIFY,$WS_VSCROLL,$WS_BORDER))
+$Label11 = GUICtrlCreateLabel("aps3文件", 904, 8, 51, 17)
+$ctrl_fileDel = GUICtrlCreateButton("删除", 1056, 32, 75, 25)
+$ctrl_fileOpen = GUICtrlCreateButton("打开", 1056, 72, 75, 25)
+$ctrl_fileInsertTo = GUICtrlCreateButton("插入", 1056, 112, 75, 25)
+$ctrl_fileRefresh = GUICtrlCreateButton("刷新", 1056, 248, 75, 25)
+$ctrl_deSelAct = GUICtrlCreateButton("取消选择", 784, 416, 107, 25)
+$ctrl_keyValue = GUICtrlCreateEdit("", 904, 304, 217, 161, BitOR($ES_AUTOVSCROLL,$ES_WANTRETURN,$WS_VSCROLL))
+$Label8 = GUICtrlCreateLabel("参数设置（形如key:value,一行一对）", 904, 280, 197, 17)
+$ctrl_actStr = GUICtrlCreateEdit("", 904, 512, 225, 41, BitOR($ES_AUTOVSCROLL,$ES_WANTRETURN,$WS_VSCROLL))
+$ctrl_currActListName = GUICtrlCreateLabel("....................................................................", 672, 8, 208, 17)
+$ctrl_saveCfg = GUICtrlCreateButton("保存", 1048, 472, 75, 25)
+$ctrl_addComment = GUICtrlCreateButton("增加注释", 808, 520, 75, 25)
+$ctrl_comment = GUICtrlCreateInput("", 616, 520, 177, 21)
+$ctrl_runToCurr = GUICtrlCreateButton("执行到当前动作", 784, 328, 107, 41)
+$ctrl_runAps3 = GUICtrlCreateButton("运行", 1056, 152, 75, 25)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
@@ -105,6 +113,8 @@ Global $setflow = 0
 Global $resOpen = 0
 Global $ACT_SELECT_MODE = False
 Global $ACT_EXEING = False
+Global $pauseProcess = ""
+Global $runToIndex = -1
 
 Opt("GUIOnEventMode", 1)
 
@@ -408,6 +418,9 @@ Func on_clearAct()
 			_GUICtrlListBox_DeleteString($ctrl_actList,0)
 		WEnd
 		actListToStr()
+
+		;显示动作列表名称
+		GUICtrlSetData($ctrl_currActListName, "")
 	EndIf
 EndFunc
 
@@ -422,9 +435,52 @@ Func on_exeAct()
 	EndIf
 EndFunc
 
+GUICtrlSetOnEvent($ctrl_deSelAct, "on_deSelAct")
+Func on_deSelAct()
+	_GUICtrlListBox_SetCurSel($ctrl_actList, -1)
+EndFunc
+
+GUICtrlSetOnEvent($ctrl_saveCfg, "on_saveCfg")
+Func on_saveCfg()
+	SaveConfig()
+EndFunc
+
+GUICtrlSetOnEvent($ctrl_addComment, "on_addComment")
+Func on_addComment()
+	If GUICtrlRead($ctrl_comment)<>"" then
+		;记录到序列中
+		if _GUICtrlListBox_GetCurSel($ctrl_actList)>=0 Then
+			InsAction("pc_expl_" & GUICtrlRead($ctrl_comment), _GUICtrlListBox_GetCurSel($ctrl_actList)+1)
+		Else
+			InsAction("pc_expl_" & GUICtrlRead($ctrl_comment), -1)
+		EndIf
+	endif
+EndFunc
+
+GUICtrlSetOnEvent($ctrl_runToCurr, "on_runToCurr")
+Func on_runToCurr()
+	If $ACT_SELECT_MODE Then
+		MsgBox(1,"错误","正在选择按键")
+	ElseIf $ACT_EXEING Then
+		MsgBox(1,"错误","正在运行")
+	Else
+		$runToIndex = -1
+		$runToIndex = _GUICtrlListBox_GetCurSel($ctrl_actList)
+		_GUICtrlListBox_SetCurSel($ctrl_actList, 0)
+		SetExeing(True)
+	EndIf
+EndFunc
+
+GUICtrlSetOnEvent($ctrl_runAps3, "on_runAps3")
+Func on_runAps3()
+	Local $aps3 = _GUICtrlListBox_GetText($ctrl_fileList, _GUICtrlListBox_GetCurSel($ctrl_fileList))
+	Local $params = StringSplit(GUICtrlRead($ctrl_keyValue), @CRLF)
+	DoAction("pc_aps3_" & $aps3 & "_1", $params)
+EndFunc
+
 ;每个act自动添加一个等待
 Func AutoInsWaitTime()
-	If $ACT_SELECT_MODE And (GUICtrlRead($ctrl_autoInsWait)=$GUI_CHECKED) Then		
+	If $ACT_SELECT_MODE And (GUICtrlRead($ctrl_autoInsWait)=$GUI_CHECKED) Then
 		if _GUICtrlListBox_GetCurSel($ctrl_actList)>=0 Then
 			InsAction("pc_wait_"&GUICtrlRead($ctrl_autoWaitDelay), _GUICtrlListBox_GetCurSel($ctrl_actList)+2)
 		Else
@@ -447,8 +503,10 @@ EndFunc
 ;保存为aps3文件
 GUICtrlSetOnEvent($ctrl_saveActList, "on_saveActList")
 Func on_saveActList()
-	aps3_saveToFile(GUICtrlRead($ctrl_actStr))
+	Local $fname = aps3_saveToFile(GUICtrlRead($ctrl_actStr))
 	refreshFileList()
+	;显示动作列表名称
+	GUICtrlSetData($ctrl_currActListName, $fname)
 EndFunc
 
 ;删除aps3文件
@@ -472,17 +530,22 @@ EndFunc
 GUICtrlSetOnEvent($ctrl_fileOpen, "on_fileOpen")
 Func on_fileOpen()
 	If _GUICtrlListBox_GetCurSel($ctrl_fileList) >= 0 Then
-		Local $act_str = GUICtrlRead($ctrl_actStr)
-		If $act_str<>"" Then
-			Local $result = MsgBox($MB_OKCANCEL, "警告", "直接打开会覆盖当前的录制，确定要打开吗？")
-			If $result = $IDOK Then
-				;清除动作列表
-				_GUICtrlListBox_Clear($ctrl_actList)
-				;从aps3中读取
-				Local $fname = _GUICtrlListBox_GetText($ctrl_fileList, _GUICtrlListBox_GetCurSel($ctrl_fileList))
-				$act_str = aps3_readFromFile(@ScriptDir & "\aps3\" & $fname)
-				importActStr($act_str)
-			EndIf
+
+		Local $result = $IDOK
+		If GUICtrlRead($ctrl_actStr)<>"" Then
+			$result = MsgBox($MB_OKCANCEL, "警告", "直接打开会覆盖当前的录制，确定要打开吗？")
+		EndIf
+
+		If $result = $IDOK Then
+			;清除动作列表
+			_GUICtrlListBox_Clear($ctrl_actList)
+			;从aps3中读取
+			Local $fname = _GUICtrlListBox_GetText($ctrl_fileList, _GUICtrlListBox_GetCurSel($ctrl_fileList))
+			Local $act_str = aps3_readFromFile(@ScriptDir & "\aps3\" & $fname)
+			importActStr($act_str)
+
+			;显示动作列表名称
+			GUICtrlSetData($ctrl_currActListName, $fname)
 		EndIf
 	Else
 		MsgBox(1, "错误", "先选择一个文件")
@@ -501,10 +564,13 @@ EndFunc
 ;====================================================
 ;====================初始化==========================
 ;====================================================
+Global $inited = False
 _GUICtrlListBox_Dir($ctrl_fileList, @ScriptDir&"\aps3\*.aps3")
+AutoItSetOption("MouseCoordMode", 0)
 ReadConfig()
 SetActSelectMode(False)
 SetExeing(False)
+$inited = True
 While 1
 	Sleep(100) ; Sleep to reduce CPU usage
 WEnd
@@ -530,6 +596,8 @@ Func SaveConfig()
 	;保存配置
 	Local $cfg_arr[1] = ["#version 1.0.0"]
 	_ArrayAdd($cfg_arr, "actList="&GUICtrlRead($ctrl_actStr),0,"!@#$%^&*")
+	_ArrayAdd($cfg_arr, "KeyValue="&StringReplace(GUICtrlRead($ctrl_keyValue), @CRLF, "[@CRLF]"),0,"!@#$%^&*")
+	_ArrayAdd($cfg_arr, "ActListName="&GUICtrlRead($ctrl_currActListName))
 	_FileWriteFromArray(@ScriptDir&"\last.cfg", $cfg_arr)
 EndFunc
 
@@ -541,6 +609,10 @@ Func ReadConfig()
 		For $i=1 To $cfg_arr[0]
 			If StringInStr($cfg_arr[$i], "actList=")=1 Then
 				importActStr(StringMid($cfg_arr[$i], 9))
+			ElseIf StringInStr($cfg_arr[$i], "KeyValue=")=1 Then
+				GUICtrlSetData($ctrl_keyValue, StringReplace(StringMid($cfg_arr[$i], 10), "[@CRLF]", @CRLF))
+			ElseIf StringInStr($cfg_arr[$i], "ActListName=")=1 Then
+				GUICtrlSetData($ctrl_currActListName, StringMid($cfg_arr[$i], 13))
 			EndIf
 		Next
 	Else
@@ -553,27 +625,65 @@ Func importActStr($act_str)
 	GUICtrlSetData($ctrl_actStr, $act_str)
 EndFunc
 
-Func ExeActionList()
+;执行一个动作
+Func ExecAction($action)
+	Local $px = MouseGetPos(0)
+	Local $py = MouseGetPos(1)
+
+	Local $params = StringSplit(GUICtrlRead($ctrl_keyValue), @CRLF)
+	If StringInStr($action, "pc_expl_")<>1 then
+		If StringInStr($action,"pc_aps3_")=1 Then
+			Local $aps3 = StringMid($action, 9, StringInStr($action, "_",0,-1)-9)
+			Local $aps3_actStr = aps3_readFromFile( @ScriptDir & "\aps3\" & $aps3)
+			Local $act_arr = StringSplit($aps3_actStr, "|")
+			Local $a = 1
+			For $a=1 To $act_arr[0]
+				ReadExeing()
+				If $ACT_EXEING Then
+					DoAction($act_arr[$a], $params)
+				EndIf
+			Next
+		Else
+			DoAction($action, $params)
+			ConsoleWrite($action&@CRLF)
+		EndIf
+	Else
+		ConsoleWrite("======================"&@CRLF)
+		ConsoleWrite(StringMid($action, 9)&@CRLF)
+		ConsoleWrite("======================"&@CRLF)
+	EndIf
+
+	If StringInStr($action, "cr_")=1 And ($ACT_SELECT_MODE=False OR (GUICtrlRead($ctrl_syncOp)=$GUI_CHECKED) OR (GUICtrlRead($ctrl_autoContinue)<>$GUI_CHECKED)) Then
+		WinActivate("PS3键盘")
+		MouseMove($px,$py, 1)
+	EndIf
+EndFunc
+
+Func ExecActionList()
+	ReadExeing()
+
 	If $ACT_EXEING And _GUICtrlListBox_GetCount($ctrl_actList)>0 Then
 		If _GUICtrlListBox_GetCurSel($ctrl_actList)<0 Then
 			_GUICtrlListBox_SetCurSel($ctrl_actList,0)
 		EndIf
 		Local $index = _GUICtrlListBox_GetCurSel($ctrl_actList)
-		DoAction(_GUICtrlListBox_GetText($ctrl_actList, $index))
+		ExecAction(_GUICtrlListBox_GetText($ctrl_actList, $index))
 
 		;执行下一个按键
 		If $index<(_GUICtrlListBox_GetCount($ctrl_actList)-1) Then
 			_GUICtrlListBox_SetCurSel($ctrl_actList,$index + 1)
 
-			If GUICtrlRead($ctrl_autoContinue)=$GUI_CHECKED Then
-				ExeActionList()
+			If GUICtrlRead($ctrl_autoContinue)=$GUI_CHECKED OR ($runToIndex>-1 And $index<$runToIndex) Then
+				ExecActionList()
 			Else
+				$runToIndex = -1;
 				SetExeing(False)
 			EndIf
 		Else
 			SetExeing(False)
 			If GUICtrlRead($ctrl_autoContinue)=$GUI_CHECKED Then
 				;_GUICtrlListBox_SetCurSel($ctrl_actList,0)
+				$runToIndex = -1;
 				MsgBox(1,"执行完成", "执行完成")
 			EndIf
 		EndIf
@@ -594,7 +704,7 @@ Func Action($action)
 		EndIf
 	Else
 		;执行动作
-		DoAction($action&"_1")
+		ExecAction($action&"_1")
 	EndIf
 EndFunc
 
@@ -604,26 +714,58 @@ Func InsAction($action, $index)
 
 	actListToStr()
 	;如果“同时操作PS3”是勾选的，那么就执行动作
-	If GUICtrlRead($ctrl_syncOp)=$GUI_CHECKED And (StringInStr($action, "pc_wait_")<>1) Then
-		DoAction($action & "_" & GUICtrlRead($ctrl_actTimes))
+	If (GUICtrlRead($ctrl_syncOp)=$GUI_CHECKED) And (StringInStr($action, "pc_wait_")<>1) And (StringInStr($action, "pc_aps3_")<>1) Then
+		ExecAction($action & "_" & GUICtrlRead($ctrl_actTimes))
 	EndIf
 	;自动把次数重置为1
 	GUICtrlSetData($ctrl_actTimes,"1")
 EndFunc
 
 Func SetExeing($bool)
-	If $bool Then
-		$ACT_EXEING = True
-		GUICtrlSetData($ctrl_exeAct,"停止")
-		GUICtrlSetState($ctrl_selectAct, $GUI_DISABLE)
-		GUICtrlSetState($ctrl_delAct, $GUI_DISABLE)
-		GUICtrlSetState($ctrl_clearAct, $GUI_DISABLE)
-		ExeActionList()
-	Else
-		$ACT_EXEING = False
-		GUICtrlSetData($ctrl_exeAct,"执行")
-		GUICtrlSetState($ctrl_selectAct, $GUI_ENABLE)
-		GUICtrlSetState($ctrl_delAct, $GUI_ENABLE)
-		GUICtrlSetState($ctrl_clearAct, $GUI_ENABLE)
+	If $ACT_EXEING<>$bool OR $inited=False Then
+		If $bool Then
+			$ACT_EXEING = True
+			GUICtrlSetData($ctrl_exeAct,"停止")
+			GUICtrlSetState($ctrl_selectAct, $GUI_DISABLE)
+			GUICtrlSetState($ctrl_delAct, $GUI_DISABLE)
+			GUICtrlSetState($ctrl_clearAct, $GUI_DISABLE)
+			GUICtrlSetState($ctrl_runToCurr, $GUI_DISABLE)
+			;写入到文件
+			Local $executing = FileOpen(@ScriptDir&"\"&"executing", 2)
+			FileWrite($executing, "1")
+			FileClose($executing)
+			;执行侦听暂停的程序
+			If $pauseProcess="" Then
+				$pauseProcess = Run(@ScriptDir&"\pause.exe")
+				Sleep(100)
+			EndIf
+			;开始执行动作序列
+			ExecActionList()
+		Else
+			$ACT_EXEING = False
+			GUICtrlSetData($ctrl_exeAct,"执行")
+			GUICtrlSetState($ctrl_selectAct, $GUI_ENABLE)
+			GUICtrlSetState($ctrl_delAct, $GUI_ENABLE)
+			GUICtrlSetState($ctrl_clearAct, $GUI_ENABLE)
+			GUICtrlSetState($ctrl_runToCurr, $GUI_ENABLE)
+			;写入到文件
+			Local $executing = FileOpen(@ScriptDir&"\"&"executing", 2)
+			FileWrite($executing, "0")
+			FileClose($executing)
+			;执行侦听暂停的程序
+			If $pauseProcess<>"" then
+				ProcessClose($pauseProcess)
+				$pauseProcess=""
+			EndIf
+		EndIf
+	EndIf
+EndFunc
+
+Func ReadExeing()
+	If $ACT_EXEING=True then
+		If (Int(FileRead(@ScriptDir&"\"&"executing"))=0) Then
+			$runToIndex = -1
+			SetExeing(False)
+		EndIf
 	EndIf
 EndFunc

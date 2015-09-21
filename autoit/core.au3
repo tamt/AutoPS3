@@ -2,10 +2,23 @@
 #include <cronus.au3>
 #include <aps3.au3>
 
-Func DoAction($act)
+;$params应该是形如['key1:value1','key2:value2',...]的数组
+Func DoAction($act, $params = NULL)
 	Local $times = Int(StringMid($act, StringInStr($act, "_",0,-1) + 1))
 	$act = StringMid($act, 1, StringInStr($act, "_",0,-1)-1)
+	
+	;把$act里的参数（以{}包含）替换成$params中对应的value
+	If $params<>NULL Then
+		For $i=1 To $params[0]
+			If $params[$i]<>"" Then
+				Local $key = StringLeft($params[$i], StringInStr($params[$i], ":")-1)
+				Local $value = StringTrimLeft($params[$i], StringInStr($params[$i], ":"))
+				$act = StringReplace($act, "{"&$key&"}", $value)
+			EndIf
+		Next
+	EndIf
 	ConsoleWrite($act &",次数:"&$times&@CRLF)
+
 	If StringLeft($act, 3)="kb_" Then
 		;teensy键盘要执行
 		$act = StringMid($act, 4)
@@ -27,7 +40,7 @@ Func DoAction($act)
 			Local $act_arr = StringSplit($aps3_actStr, "|")
 			Local $a = 1
 			For $a=1 To $act_arr[0]
-				DoAction($act_arr[$a])
+				DoAction($act_arr[$a], $params)
 			Next
 		EndIf
 	EndIf
@@ -92,8 +105,11 @@ EndFunc
 
 ;输入字母
 Func PS3InputText($text, $times)
+	Local $arr = StringSplit($text, "")
 	For $i=1 To $times
-		_CommSendString($text)
-		Sleep(50)
+		for $i=1 to $arr[0]
+			_CommSendByte(Asc($arr[$i]))
+			Sleep(50)
+		next
 	Next
 EndFunc
